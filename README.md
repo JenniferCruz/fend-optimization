@@ -9,7 +9,7 @@ This project was completed for the Website Optimization Course in the Udacity Fr
 ## Optimizations made
 #### Optimized PageSpeed Insights score for _index.html_
 The changes listed below allowed to get a PageSpeed Insights score of __95 for Mobile__ and __94 for Desktop__. 
-* Hosted images were resized and compressed
+* Hosted images were resized, compressed and stripped off their meta information.
 * All JavaScript files were externalized and made async (However, I am worried about how this could impact analytics in a "real live" project).
 * All styles were inlined in the index.html file's header.
 * The linked web font was removed and substituted for a web safe font. 
@@ -17,4 +17,4 @@ The changes listed below allowed to get a PageSpeed Insights score of __95 for M
 ##### A note on minification
 I considered minifying all text files. However, I found out this had zero impact in the PageSpeed score, probably because the files are already very small by themselves. 
 
-#### Optimize Frames per Second in pizza.html
+#### Optimized Frames per Second in pizza.html
