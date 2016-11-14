@@ -3,7 +3,7 @@ This project was completed for the Website Optimization Course in the [Udacity F
 
 ## Getting started
 - To see the application go to [https://jennifercruz.github.io/fend-optimization/](https://jennifercruz.github.io/fend-optimization) or download it from [this Github repository](https://github.com/JenniferCruz/fend-optimization).
-- To run The PageSpeed tool for index.html [click here](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fjennifercruz.github.io%2Ffend-pageSpeed%2F).
+- To run The PageSpeed tool for index.html [click here](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fjennifercruz.github.io%2Ffend-optimization%2F).
 - To see loading time and fps for [views/pizza.html](https://jennifercruz.github.io/fend-optimization/views/pizza.html), use [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/).
 
 ## Optimizations made
@@ -13,6 +13,7 @@ The changes listed below allowed to get a PageSpeed Insights score of __95 for M
 * All JavaScript files were externalized and made `async` (However, I am worried about how this could impact analytics in a "real live" project).
 * All styles were inlined in the `index.html` file's header (but I don't believe this would be a good solution for bigger sites).
 * The linked web font was removed and substituted for a web safe font.
+* _(I changed the design a little, but I don't think this had any impact in PageSpeed)_
 
 ##### A note on minification
 I considered minifying all text files. However, I found out this had zero impact in the PageSpeed score, probably because the files are already very small by themselves.
