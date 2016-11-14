@@ -441,18 +441,19 @@ var resizePizzas = function(size) {
 
     var newSize = sizeSwitcher(size);
     var dx = (newSize - oldSize) * windowWidth;
-
     return dx;
   }
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
+    // declared those variables to do most operations out of loop
     var randomPizzaContainerInDOM = document.querySelectorAll(".randomPizzaContainer");
     var randomPizzaContainerOffsetWidth = randomPizzaContainerInDOM[0].offsetWidth;
     var dx = determineDx(randomPizzaContainerInDOM[0], size);
-    var newwidth = (randomPizzaContainerOffsetWidth + dx) + 'px';
+    var newWidth = (randomPizzaContainerOffsetWidth + dx) + 'px';
+
     for (var i = 0; i < randomPizzaContainerInDOM.length; i++) {
-      randomPizzaContainerInDOM[i].style.width = newwidth;
+      randomPizzaContainerInDOM[i].style.width = newWidth;
     }
   }
 
@@ -468,7 +469,9 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
-var numberOfPizzas = 100;
+var numberOfPizzas = 50;
+// declared this variable outside the loop
+// to make only one call to the document.getElementById("randomPizzas") function
 var pizzasDiv = document.getElementById("randomPizzas");
 for (var i = 2; i < numberOfPizzas; i++) {
   pizzasDiv.appendChild(pizzaElementGenerator(i));
@@ -503,6 +506,8 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.querySelectorAll('.mover');
+  // this variable was moved out of loop
+  // to make only one access to document.body.scrollTop
   var docBodyScrollTop = document.body.scrollTop;
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin((docBodyScrollTop / 1250) + (i % 5));
@@ -525,6 +530,8 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
+  // declared this as a variable to make it more clear what we are doing Here
+  // and reduced its number from 200 to 50
   var slidingPizzas = 50;
   for (var i = 0; i < slidingPizzas; i++) {
     var elem = document.createElement('img');
